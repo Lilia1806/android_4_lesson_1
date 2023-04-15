@@ -2,22 +2,22 @@ package com.example.android_4_lesson_1.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.ListAdapter
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.android_4_lesson_1.base.BaseDiffUtilItemCallback
 import com.example.android_4_lesson_1.databinding.ItemAnimeBinding
 import com.example.android_4_lesson_1.models.DataItem
 
-class AnimeAdapter : ListAdapter<DataItem, AnimeAdapter.ViewHolder>(
+class AnimeAdapter : PagingDataAdapter<DataItem, AnimeAdapter.ViewHolder>(
     BaseDiffUtilItemCallback()
 ) {
     inner class ViewHolder(private val binding: ItemAnimeBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(attributes: DataItem) {
             binding.tvAnime.text = attributes.attributes.titles.enJp
-            Glide.with(binding.imageAnime).load(attributes.attributes.posterImage.original)
-                .into(binding.imageAnime)
+            Glide.with(binding.itemImageAnime).load(attributes.attributes.posterImage.original)
+                .into(binding.itemImageAnime)
         }
     }
 

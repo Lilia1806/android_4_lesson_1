@@ -13,7 +13,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/image_anime"
+            android:id="@+id/item_image_anime"
             android:layout_width="120dp"
             android:layout_height="170dp" />
 
@@ -24,7 +24,7 @@
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="4dp"
             android:textColor="@color/white"
-            android:textSize="9sp" />
+            android:textSize="12sp" />
 
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,7 +3,7 @@ package com.example.android_4_lesson_1.ui.activity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.android_4_lesson_1.databinding.ActivityMainBinding
-import com.example.android_4_lesson_1.ui.adapter.OnBoardViewPagerAdapter
+import com.example.android_4_lesson_1.ui.adapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initialize() {
-        val adapter = OnBoardViewPagerAdapter(supportFragmentManager, lifecycle)
+        val adapter = ViewPagerAdapter(supportFragmentManager, lifecycle)
         binding.viewPager.adapter = adapter
 
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->

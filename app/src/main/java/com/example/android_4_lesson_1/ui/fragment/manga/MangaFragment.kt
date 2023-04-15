@@ -1,16 +1,15 @@
 package com.example.android_4_lesson_1.ui.fragment.manga
 
-import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.android_4_lesson_1.R
-import com.example.android_4_lesson_1.Resource
 import com.example.android_4_lesson_1.base.BaseFragment
 import com.example.android_4_lesson_1.databinding.FragmentMangaBinding
 import com.example.android_4_lesson_1.ui.adapter.MangaAdapter
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MangaFragment :
@@ -29,24 +28,16 @@ class MangaFragment :
 
     override fun setupObserves() {
         viewModel.fetchManga().observe(viewLifecycleOwner) {
-            when (it) {
-                is Resource.Error<*> -> {
-                    Toast.makeText(requireContext(), "error", Toast.LENGTH_SHORT).show()
-                }
-                is Resource.Loading<*> -> {
-                }
-                is Resource.Success<*> -> {
-                    it.data?.let { data ->
-                        mangaAdapter.submitList(data.data)
-                    }
-                }
+            lifecycleScope.launch {
+                mangaAdapter.submitData(it)
             }
         }
     }
+}
+
 
 //    private fun onItemClick(id: Int) {
 //        findNavController().navigate(
 //            MangaFragmentDirections.actionMangaFragmentToMangaDetailFragment(id)
 //        )
 //    }
-}

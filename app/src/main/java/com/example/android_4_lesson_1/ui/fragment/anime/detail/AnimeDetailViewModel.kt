@@ -1,12 +1,11 @@
 package com.example.android_4_lesson_1.ui.fragment.anime.detail
 
-//import androidx.lifecycle.ViewModel
-//import com.example.android_4_lesson_1.date.repositories.AnimeRepository
-//import javax.inject.Inject
-//
+import com.example.android_4_lesson_1.base.BaseViewModel
+import com.example.android_4_lesson_1.date.repositories.AnimeRepository
+import javax.inject.Inject
+
 //class AnimeDetailViewModel @Inject constructor(
 //    private val animeRepository: AnimeRepository
-//) : ViewModel() {
+//) : BaseViewModel() {
 //
-//    fun fetchAnimeDetail() = animeRepository.fetchAnimeDetail()
-//}
+//    fun fetchAnimeDetails(id: String) = animeRepository.fetchAnimeDetail(id)}
