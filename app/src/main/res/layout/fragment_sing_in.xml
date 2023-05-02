@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/aab1aa625aec84b6a4bed6f769e233e5"
+    tools:context=".ui.fragment.sing.in.SingInFragment">
+
+    <EditText
+        android:id="@+id/login_sing_in"
+        android:layout_width="360dp"
+        android:layout_height="57dp"
+        android:layout_marginBottom="0dp"
+        android:backgroundTint="@color/rounder"
+        android:gravity="center"
+        android:hint="enter_email"
+        android:inputType="textPersonName"
+        android:padding="15dp"
+        android:textColor="#673AB7"
+        android:textColorHint="#673AB7"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/account_image"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/ic_baseline_alternate_email_24"
+        app:layout_constraintBottom_toBottomOf="@id/login_sing_in"
+        app:layout_constraintStart_toStartOf="@id/login_sing_in"
+        app:layout_constraintTop_toTopOf="@id/login_sing_in" />
+
+    <EditText
+        android:id="@+id/password_sing_in"
+        android:layout_width="360dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="@color/rounder"
+        android:gravity="center"
+        android:hint="enter_password"
+        android:inputType="textPassword"
+        android:padding="15dp"
+        android:textColor="#673AB7"
+        android:textColorHint="#673AB7"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@id/login_sing_in"
+        app:layout_constraintStart_toStartOf="@id/login_sing_in"
+        app:layout_constraintTop_toBottomOf="@id/login_sing_in"
+        tools:ignore="TextFields" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_sing"
+        android:layout_width="250dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="25dp"
+        android:backgroundTint="#6A2E2D2D"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="enter"
+        android:textColor="#673AB7"
+        android:textSize="18sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="@id/password_sing_in"
+        app:layout_constraintStart_toStartOf="@id/password_sing_in"
+        app:layout_constraintTop_toBottomOf="@id/password_sing_in"
+        app:strokeColor="@color/purple_500"
+        app:strokeWidth="2dp" />
+
+    <ImageView
+        android:id="@+id/password_image"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/ic_baseline_lock_24"
+        app:layout_constraintBottom_toBottomOf="@id/password_sing_in"
+        app:layout_constraintStart_toStartOf="@id/password_sing_in"
+        app:layout_constraintTop_toTopOf="@id/password_sing_in" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

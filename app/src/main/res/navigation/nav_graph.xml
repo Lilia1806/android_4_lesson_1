@@ -3,42 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/animeFragment">
+    app:startDestination="@id/mainFlowFragment">
+
 
     <fragment
-        android:id="@+id/animeFragment"
-        android:name="com.example.android_4_lesson_1.ui.fragment.anime.AnimeFragment"
-        android:label="fragment_anime"
-        tools:layout="@layout/fragment_anime" >
+        android:id="@+id/mainFlowFragment"
+        android:name="com.example.android_4_lesson_1.ui.fragment.main.MainFlowFragment"
+        android:label="fragment_main_flow"
+        tools:layout="@layout/fragment_main_flow" />
+    <fragment
+        android:id="@+id/singFlowFragment"
+        android:name="com.example.android_4_lesson_1.ui.fragment.sing.SingFlowFragment"
+        android:label="fragment_sing_flow"
+        tools:layout="@layout/fragment_sing_flow" >
         <action
-            android:id="@+id/action_animeFragment_to_animeDetailFragment"
-            app:destination="@id/animeDetailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/mangaFragment"
-        android:name="com.example.android_4_lesson_1.ui.fragment.manga.MangaFragment"
-        android:label="fragment_manga"
-        tools:layout="@layout/fragment_manga" >
-        <action
-            android:id="@+id/action_mangaFragment_to_mangaDetailFragment"
-            app:destination="@id/mangaDetailFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/animeDetailFragment"
-        android:name="com.example.android_4_lesson_1.ui.fragment.anime.detail.AnimeDetailFragment"
-        android:label="fragment_anime_detail"
-        tools:layout="@layout/fragment_anime_detail" >
-        <argument
-            android:name="id"
-            app:argType="integer" />
-    </fragment>
-    <fragment
-        android:id="@+id/mangaDetailFragment"
-        android:name="com.example.android_4_lesson_1.ui.fragment.manga.detail.MangaDetailFragment"
-        android:label="fragment_manga_detail"
-        tools:layout="@layout/fragment_manga_detail" >
-        <argument
-            android:name="id"
-            app:argType="integer" />
+            android:id="@+id/action_singFlowFragment_to_mainFlowFragment"
+            app:destination="@id/mainFlowFragment"
+            app:popUpTo="@layout/fragment_sing_flow"
+            app:popUpToInclusive="true"/>
     </fragment>
 </navigation>

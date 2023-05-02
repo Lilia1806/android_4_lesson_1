@@ -1,12 +1,12 @@
 package com.example.android_4_lesson_1.base
 
-import androidx.lifecycle.liveData
 import com.example.android_4_lesson_1.utils.Resource
+import kotlinx.coroutines.flow.flow
 import java.io.IOException
 
 abstract class BaseRepository {
 
-    fun <T> doRequest(result: suspend () -> T) = liveData {
+    fun <T> doRequest(result: suspend () -> T) = flow {
         emit(Resource.Loading())
 
         try {

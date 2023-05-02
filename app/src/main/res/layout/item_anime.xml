@@ -24,7 +24,8 @@
             android:layout_gravity="bottom|center"
             android:layout_marginBottom="4dp"
             android:textColor="@color/white"
-            android:textSize="12sp" />
+            android:textSize="12sp"
+            android:textStyle="bold|italic" />
 
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

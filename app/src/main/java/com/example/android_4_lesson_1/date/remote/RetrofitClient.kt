@@ -2,6 +2,8 @@ package com.example.android_4_lesson_1.date.remote
 
 import com.example.android_4_lesson_1.date.remote.apiservce.AnimeApiService
 import com.example.android_4_lesson_1.date.remote.apiservce.MangaApiService
+import com.example.android_4_lesson_1.date.remote.apiservce.SignInApiService
+import com.example.android_4_lesson_1.date.repositories.TokenInterceptor
 import com.example.android_4_lesson_1.utils.Constant
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -13,6 +15,7 @@ class RetrofitClient {
 
     private val okHttpClient = OkHttpClient().newBuilder()
         .addInterceptor(provideLoggingInterceptor())
+        .addInterceptor(TokenInterceptor())
         .connectTimeout(30, TimeUnit.SECONDS)
         .readTimeout(30, TimeUnit.SECONDS)
         .writeTimeout(30, TimeUnit.SECONDS)
@@ -30,4 +33,6 @@ class RetrofitClient {
     fun provideAnimeApiService() = retrofitClient.create(AnimeApiService::class.java)
 
     fun provideMangaApiService() = retrofitClient.create(MangaApiService::class.java)
+
+    fun providerSignInApiService() = retrofitClient.create(SignInApiService::class.java)
 }

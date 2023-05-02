@@ -9,11 +9,20 @@ import com.example.android_4_lesson_1.base.BaseDiffUtilItemCallback
 import com.example.android_4_lesson_1.databinding.ItemAnimeBinding
 import com.example.android_4_lesson_1.models.DataItem
 
-class AnimeAdapter : PagingDataAdapter<DataItem, AnimeAdapter.ViewHolder>(
+class AnimeAdapter(
+    val onItemClick: (id: String) -> Unit
+) : PagingDataAdapter<DataItem, AnimeAdapter.ViewHolder>(
     BaseDiffUtilItemCallback()
 ) {
     inner class ViewHolder(private val binding: ItemAnimeBinding) :
         RecyclerView.ViewHolder(binding.root) {
+
+        init {
+            itemView.setOnClickListener {
+                getItem(absoluteAdapterPosition)?.let { it1 -> onItemClick(it1.id) }
+            }
+        }
+
         fun onBind(attributes: DataItem) {
             binding.tvAnime.text = attributes.attributes.titles.enJp
             Glide.with(binding.itemImageAnime).load(attributes.attributes.posterImage.original)
