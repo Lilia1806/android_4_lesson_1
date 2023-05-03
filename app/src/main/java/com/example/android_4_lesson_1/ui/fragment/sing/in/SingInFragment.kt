@@ -9,9 +9,7 @@ import com.example.android_4_lesson_1.base.BaseFragment
 import com.example.android_4_lesson_1.databinding.FragmentSingInBinding
 import com.example.android_4_lesson_1.date.local.preferences.PreferenceHelper
 import com.example.android_4_lesson_1.date.local.preferences.UserPreferencesData
-import com.example.android_4_lesson_1.extension.showText
 import com.example.android_4_lesson_1.models.AuthModel
-import com.example.android_4_lesson_1.utils.Resource
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -53,23 +51,3 @@ class SingInFragment :
     }
 }
 
-//            viewModel.postUserData(authModel).observe(viewLifecycleOwner) {
-//                when (it) {
-//                    is Resource.Error -> {
-//                        showText(it.message.toString())
-//                    }
-//                    is Resource.Loading -> {
-//                    }
-//                    is Resource.Success -> {
-//                        Toast.makeText(requireContext(), "$it", Toast.LENGTH_SHORT).show()
-//                        userPreferencesData.apply {
-//                            preferenceHelper.isAuthorize = true
-//                        }
-//                        requireActivity().findNavController(R.id.nav_host_fragment)
-//                            .navigate(R.id.action_singFlowFragment_to_mainFlowFragment)
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}
