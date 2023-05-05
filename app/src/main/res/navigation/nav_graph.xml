@@ -13,7 +13,7 @@
         tools:layout="@layout/fragment_main_flow" />
     <fragment
         android:id="@+id/singFlowFragment"
-        android:name="com.example.android_4_lesson_1.ui.fragment.sing.SingFlowFragment"
+        android:name="com.example.android_4_lesson_1.ui.fragment.sing.in.SingFlowFragment"
         android:label="fragment_sing_flow"
         tools:layout="@layout/fragment_sing_flow" >
         <action

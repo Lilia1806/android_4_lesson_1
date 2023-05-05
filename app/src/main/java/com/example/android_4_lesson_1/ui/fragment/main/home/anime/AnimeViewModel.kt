@@ -1,15 +1,16 @@
-package com.example.android_4_lesson_1.ui.fragment.anime.detail
+package com.example.android_4_lesson_1.ui.fragment.main.home.anime
 
+import androidx.lifecycle.viewModelScope
+import androidx.paging.cachedIn
 import com.example.android_4_lesson_1.base.BaseViewModel
 import com.example.android_4_lesson_1.date.repositories.AnimeRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-
 @HiltViewModel
-class AnimeDetailViewModel @Inject constructor(
+class AnimeViewModel @Inject constructor(
     private val animeRepository: AnimeRepository
 ) : BaseViewModel() {
 
-    fun fetchAnimeDetail(id: String) = animeRepository.fetchAnimeDetail(id)
+    fun fetchAnime() = animeRepository.fetchAnime().cachedIn(viewModelScope)
 }

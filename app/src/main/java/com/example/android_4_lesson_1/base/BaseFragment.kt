@@ -33,23 +33,23 @@ abstract class BaseFragment<VB : ViewBinding, VM : BaseViewModel>(@LayoutRes lay
     protected open fun setupSubscribes() {}
 
 
-protected open fun <T> Flow<Resource<T>>.subscribe(
-    state: ((state: Resource<T>) -> Unit)? = null,
-    onError: (error: String) -> Unit,
-    onSuccess: ((data: T) -> Unit)
-) {
-    lifecycleScope.launch {
-        collect {
-            when (it) {
-                is Resource.Error -> onError(it.message.toString())
-                is Resource.Loading -> {}
-                is Resource.Success -> {
-                    it.data?.let { data ->
-                        onSuccess(data)
+    protected open fun <T> Flow<Resource<T>>.subscribe(
+        state: ((state: Resource<T>) -> Unit)? = null,
+        onError: (error: String) -> Unit,
+        onSuccess: ((data: T) -> Unit)
+    ) {
+        lifecycleScope.launch {
+            collect {
+                when (it) {
+                    is Resource.Error -> onError(it.message.toString())
+                    is Resource.Loading -> {}
+                    is Resource.Success -> {
+                        it.data?.let { data ->
+                            onSuccess(data)
+                        }
                     }
                 }
             }
         }
     }
-}
 }

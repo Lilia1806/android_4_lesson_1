@@ -58,5 +58,7 @@ data class Attributes(
     @SerializedName("en_jp")
     val en_jp: String,
     @SerializedName("number")
-    val number: Int
+    val number: Int,
+    @SerializedName("chapterCount")
+    val chapterCount: Int,
 )

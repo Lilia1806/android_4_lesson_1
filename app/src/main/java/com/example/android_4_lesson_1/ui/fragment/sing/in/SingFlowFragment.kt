@@ -1,4 +1,4 @@
-package com.example.android_4_lesson_1.ui.fragment.sing
+package com.example.android_4_lesson_1.ui.fragment.sing.`in`
 
 import com.example.android_4_lesson_1.R
 import com.example.android_4_lesson_1.base.BaseFlowFragment

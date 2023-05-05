@@ -47,15 +47,3 @@ class MainActivity : AppCompatActivity() {
         navController.graph = navGraph
     }
 }
-//private fun setStartDestination(){
-//    val navGraph = navController.navInflater.inflate(R.navigation.nav_graph)
-//    when{
-//        !preferencesHelper.isAuthorize -> {
-//            navGraph.setStartDestination(R.id.singFlowFragment)
-//        }
-//        else -> {
-//            navGraph.setStartDestination(R.id.mainFlowFragment)
-//        }
-//    }
-//    navController.graph = navGraph
-//}

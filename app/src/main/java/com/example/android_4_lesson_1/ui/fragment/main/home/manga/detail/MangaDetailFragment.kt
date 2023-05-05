@@ -1,4 +1,4 @@
-package com.example.android_4_lesson_1.ui.fragment.manga.detail
+package com.example.android_4_lesson_1.ui.fragment.main.home.manga.detail
 
 import android.widget.Toast
 import androidx.fragment.app.viewModels
@@ -32,10 +32,15 @@ class MangaDetailFragment :
                         Toast.makeText(requireContext(), "loading", Toast.LENGTH_SHORT).show()
                     }
                     is Resource.Success<*> -> {
-                        it.data.let { anime ->
-                            binding.itemMangaName.text = anime!!.data.attributes.titles.enJp
-                            binding.itemMangaImage.setImage(anime.data.attributes.posterImage.original)
-                            binding.itemMangaPoster.setImage(anime.data.attributes.posterImage.original)
+                        it.data.let { manga ->
+                            binding.itemMangaName.text = manga!!.data.attributes.titles.enJp
+                            binding.itemMangaImage.setImage(manga.data.attributes.posterImage.original)
+                            binding.itemMangaPoster.setImage(manga.data.attributes.posterImage.original)
+                            binding.itemMangaChapters.text =
+                                manga.data.attributes.chapterCount.toString()
+                            binding.itemMangaStatus.text = manga.data.attributes.status
+                            binding.itemMangaPremiered.text = manga.data.attributes.createdAt
+                            binding.itemMangaAgeRating.text = manga.data.attributes.ageRating
                             Toast.makeText(requireContext(), "success", Toast.LENGTH_SHORT).show()
                         }
                     }

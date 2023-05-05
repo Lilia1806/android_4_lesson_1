@@ -2,8 +2,8 @@ package com.example.android_4_lesson_1.ui.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.android_4_lesson_1.ui.fragment.anime.AnimeFragment
-import com.example.android_4_lesson_1.ui.fragment.manga.MangaFragment
+import com.example.android_4_lesson_1.ui.fragment.main.home.anime.AnimeFragment
+import com.example.android_4_lesson_1.ui.fragment.main.home.manga.MangaFragment
 
 class ViewPagerAdapter(fragment: Fragment) :
     FragmentStateAdapter(fragment) {
